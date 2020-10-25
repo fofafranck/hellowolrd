@@ -1,5 +1,3 @@
-<h1> Hello, Welcome to Simple DevOps Project Fabrice !!   </h1>
-<h2> Data Service Group is your learning partner </h2>
-<h2> Glad to see you here </h2>
-<h1> Good job Fabrice on learning Devops</h1
-<h1> my beautifaul daughter Anayella</h1>>
+<h1> Hello, Welcome to my personnal site!!   </h1>
+<h2> Data Service Group is my learning partner </h2>
+<h2> I am sure I will soon make that 150k </h2>
