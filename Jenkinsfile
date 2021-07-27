@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  tools{
+  tools {
      maven 'M2_HOME'
   }
   environment {
@@ -22,7 +22,7 @@ pipeline {
    }
   stage('deploy'){
       steps {
-        scripts {
+        script {
           docker.build registry + ":$BUILD_NUMBER"
         }
       }
