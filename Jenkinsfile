@@ -1,22 +1,30 @@
 pipeline {
   agent any
+  tools{
+     maven 'M2_HOME'
+  }
+  environment {
+    registry = "fofafranck/jenkinspipeline"
+    registryCredential = 'DockerID'
+  }
   stages {
-    stage('deploy'){
+    stage('Build'){
       steps {
-       echo "deploy step"
-       sleep 10
+        sh 'mvn clean'
+        sh 'mvn install'
+        sh 'mvn package'
       }
     }
   stage('test'){
       steps {
-       echo "test step"
-       sleep 10
+        sh 'mvn test'
       }  
    }
-  stage('cd'){
+  stage('deploy'){
       steps {
-       echo "cd step"
-       sleep 10
+        scripts {
+          docker.build registry + ":$BUILD_NUMBER"
+        }
       }
     }
   }
