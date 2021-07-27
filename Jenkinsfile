@@ -24,6 +24,7 @@ pipeline {
       steps {
         script {
           docker.build registry + ":$BUILD_NUMBER"
+          docker.push registry + ":$BUILD_NUMBER"
         }
       }
     }
