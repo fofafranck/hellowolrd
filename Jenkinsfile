@@ -29,7 +29,6 @@ pipeline {
    }
   stage('Push image') {
     steps {
-       docker.with registry {            
        app.push("${env.BUILD_NUMBER}")            
        app.push("latest")          
        }
