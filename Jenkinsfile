@@ -30,7 +30,7 @@ pipeline {
   stage('Push image') {
     steps {
       script {
-          docker.withRegistry('https://registry.hub.docker.com', 'git') {
+          docker.withRegistry('https://registry.hub.docker.com') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")  
      }
