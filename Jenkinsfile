@@ -32,7 +32,13 @@ pipeline {
       script {
           docker.withRegistry('https://registry.hub.docker.com') {
             app.push("${env.BUILD_NUMBER}")
-            app.push("latest")  
+            app.push("latest")
+   node() {
+       checkout scm
+       def a = load('a.groovy')
+       echo("${env.BUILD_NUMBER}")
+       echo("${a.LOADED_BUILD_NUMBER}")
+      }
      }
     }
    }
